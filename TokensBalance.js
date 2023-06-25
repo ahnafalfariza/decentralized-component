@@ -1,4 +1,8 @@
-// Start of Style
+// Start of Style component
+const cssFont = fetch(
+  "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800"
+).body;
+
 const Root = styled.div`
   ${cssFont}
   padding: 16px;
@@ -76,9 +80,6 @@ const accountId = props.accountId || context.accountId;
 
 if (!accountId) return <p>Please provide account id as props</p>;
 
-const cssFont = fetch(
-  "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800"
-).body;
 const data = fetch(
   `https://api.kitwallet.app/account/${accountId}/likelyTokensFromBlock?fromBlockTimestamp=0`
 ).body;
